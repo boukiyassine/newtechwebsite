@@ -188,16 +188,22 @@
 
     /* ── Mobile pricing cards ── */
     @media (max-width:767px){
-      .price-card{padding:10px 7px!important}
-      .price-plan-name{font-size:0.95rem!important}
+      .price-card{padding:12px 8px!important;display:flex;flex-direction:column}
+      .price-plan-name{font-size:1rem!important;margin-bottom:6px!important}
       .price-tag{display:none}
-      .price-num{font-size:2rem!important}
-      .price-dt{font-size:0.85rem!important;margin-bottom:4px!important}
-      .price-period{display:none}
-      .price-features{display:none}
-      .price-cta{padding:10px 4px!important;font-size:0.58rem!important;letter-spacing:0.02em!important;gap:3px}
+      .price-num{font-size:2.2rem!important;line-height:1}
+      .price-dt{font-size:0.8rem!important;margin-bottom:2px!important}
+      .price-period{display:flex!important;flex-direction:column;gap:3px;margin-bottom:8px!important}
+      .price-features{margin-bottom:10px!important}
+      .price-features li{font-size:0.62rem!important;gap:5px!important}
+      .price-features li svg{width:10px!important;height:10px!important;flex-shrink:0}
+      .price-features.space-y-3>*+*{margin-top:5px!important}
+      .price-cta{margin-top:auto!important;padding:11px 6px!important;font-size:0.6rem!important;letter-spacing:0.02em!important;gap:3px}
       .price-cta svg{display:none}
-      .plan-badge{font-size:0.55rem!important;padding:4px 8px!important;top:-10px!important;white-space:nowrap}
+      .plan-badge{font-size:0.52rem!important;padding:4px 8px!important;top:-10px!important;white-space:nowrap}
+      .price-oldprice{font-size:0.75rem!important;font-weight:800!important;color:#aaa!important;text-decoration:line-through}
+      .price-discount{font-size:0.65rem!important;padding:2px 5px!important}
+      .price-permonth{font-size:0.6rem!important;color:#888!important}
     }
   </style>
 </head>
@@ -835,16 +841,27 @@
              style="background:linear-gradient(135deg,#FF8C2A,#F97316,#E06010)">
           🔥 Offre active
         </div>
-        <div class="price-tag text-[11px] font-bold uppercase tracking-widest text-or-500 mb-1">Abonnement</div>
-        <div class="price-plan-name hlg text-white mb-3" style="font-size:1.5rem">1 An</div>
+        <!-- Low Cost label -->
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full mb-2" style="background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.3)">
+          <span class="text-[10px] font-black uppercase tracking-widest" style="color:#F97316">⚡ Low Cost</span>
+        </div>
+        <div class="price-plan-name hlg text-white mb-2" style="font-size:1.5rem">1 An</div>
         <div class="flex items-end gap-2 mb-1">
           <span class="price-num hlg text-white" style="font-size:3.5rem">720</span>
-          <span class="price-dt text-neutral-500 mb-2 font-bold text-lg">DT</span>
+          <span class="price-dt text-neutral-500 mb-2 font-bold text-lg">DT/an</span>
         </div>
-        <div class="price-period flex items-center flex-wrap gap-2 mb-7">
-          <span class="text-neutral-600 text-xs line-through">840 DT</span>
-          <span class="text-[11px] font-black text-or-500 px-2 py-0.5 rounded-full" style="background:rgba(249,115,22,0.12)">–14%</span>
-          <span class="text-neutral-600 text-xs">soit 60 DT / mois</span>
+        <div class="price-period mb-4">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="price-oldprice font-bold" style="color:#bbb;text-decoration:line-through;font-size:1.05rem">840 DT</span>
+            <span class="price-discount font-black px-2 py-0.5 rounded-full text-[11px]" style="background:rgba(249,115,22,0.15);color:#F97316">–14%</span>
+          </div>
+          <div class="price-permonth text-neutral-500 text-xs mt-1">soit 60 DT / mois</div>
+          <!-- Countdown -->
+          <div class="flex items-center gap-1.5 mt-2 px-2.5 py-1.5 rounded-lg" style="background:rgba(220,38,38,0.1);border:1px solid rgba(220,38,38,0.25)">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#ef4444" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span class="text-[10px] font-bold uppercase tracking-wide" style="color:#ef4444">Expire dans&nbsp;</span>
+            <span id="countdown" class="text-[10px] font-black" style="color:#ef4444">3j 00h 00m</span>
+          </div>
         </div>
         <ul class="price-features space-y-3 mb-8">
           <li class="flex items-center gap-2.5 text-sm text-neutral-300">
@@ -1175,6 +1192,24 @@
     document.getElementById('nav').style.boxShadow =
       window.scrollY > 50 ? '0 4px 24px rgba(0,0,0,0.6)' : 'none';
   }, { passive: true });
+
+  /* ── Countdown timer ── */
+  (function(){
+    const deadline = new Date('2026-04-29T23:59:59');
+    const el = document.getElementById('countdown');
+    if (!el) return;
+    function update(){
+      const diff = deadline - Date.now();
+      if (diff <= 0){ el.textContent = 'Expiré'; return; }
+      const d = Math.floor(diff/86400000);
+      const h = Math.floor((diff%86400000)/3600000);
+      const m = Math.floor((diff%3600000)/60000);
+      const s = Math.floor((diff%60000)/1000);
+      el.textContent = d+'j '+String(h).padStart(2,'0')+'h '+String(m).padStart(2,'0')+'m '+String(s).padStart(2,'0')+'s';
+    }
+    update();
+    setInterval(update, 1000);
+  })();
 
   /* ── Programme card image hover scale ── */
   document.querySelectorAll('.card img').forEach(img => {
