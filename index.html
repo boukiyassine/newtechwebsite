@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Newtech Sports Center — Ta transformation commence ici</title>
+  <meta name="description" content="Newtech Sports Center à Charguia 1, Ariana. La salle de sport premium en Tunisie. Coachs certifiés, équipement haut de gamme. Réserve ta séance d'essai gratuite." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://tally.so/widgets/embed.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            or: { 400:'#FF9A47', 500:'#F97316', 600:'#EA6C0A', 700:'#C45508' },
+            ink: { 950:'#050505', 900:'#080808', 800:'#0F0F0F', 700:'#141414', 600:'#1C1C1C', 500:'#252525' }
+          },
+          fontFamily: { display:['Bebas Neue','sans-serif'], body:['Inter','sans-serif'] }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ── Reset & base ── */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{font-family:'Inter',sans-serif;background:#080808;color:#fff;scroll-behavior:smooth}
+    img,video{display:block;max-width:100%}
+
+    /* ── Grain texture ── */
+    .grain::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity:0.018}
+
+    /* ── Typography ── */
+    .hxl{font-family:'Bebas Neue',sans-serif;letter-spacing:-0.01em;line-height:0.9}
+    .hlg{font-family:'Bebas Neue',sans-serif;letter-spacing:-0.01em;line-height:0.95}
+    .body{line-height:1.74;color:#9A9A9A}
+    .body-light{line-height:1.74;color:#C0C0C0}
+
+    /* ── Buttons ── */
+    .btn-fire{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      background:linear-gradient(135deg,#FF8C2A 0%,#F97316 45%,#E06010 100%);
+      color:#fff;font-family:'Inter',sans-serif;font-weight:800;
+      font-size:0.9rem;letter-spacing:0.07em;text-transform:uppercase;
+      padding:17px 38px;border-radius:6px;cursor:pointer;border:none;
+      box-shadow:0 5px 24px rgba(249,115,22,0.45),0 1px 4px rgba(0,0,0,0.6);
+      transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1),box-shadow 0.22s ease,filter 0.22s ease;
+      text-decoration:none;position:relative;overflow:hidden}
+    .btn-fire::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,255,255,0.12),transparent 60%);
+      opacity:0;transition:opacity 0.2s ease}
+    .btn-fire:hover{transform:translateY(-3px) scale(1.025);
+      box-shadow:0 10px 36px rgba(249,115,22,0.6),0 3px 8px rgba(0,0,0,0.5);filter:brightness(1.06)}
+    .btn-fire:hover::before{opacity:1}
+    .btn-fire:active{transform:translateY(0) scale(0.97)}
+    .btn-fire:focus-visible{outline:2px solid #F97316;outline-offset:3px}
+
+    .btn-outline{
+      display:inline-flex;align-items:center;gap:9px;
+      background:transparent;color:#fff;font-family:'Inter',sans-serif;
+      font-weight:700;font-size:0.85rem;letter-spacing:0.05em;text-transform:uppercase;
+      padding:15px 30px;border-radius:6px;cursor:pointer;
+      border:1.5px solid rgba(255,255,255,0.2);
+      transition:border-color 0.2s ease,background 0.2s ease,transform 0.2s ease;
+      text-decoration:none}
+    .btn-outline:hover{border-color:#F97316;background:rgba(249,115,22,0.08);transform:translateY(-2px)}
+    .btn-outline:focus-visible{outline:2px solid #F97316;outline-offset:3px}
+
+    /* ── Card ── */
+    .card{background:#0E0E0E;border:1px solid rgba(255,255,255,0.065);border-radius:14px;
+      box-shadow:0 2px 16px rgba(0,0,0,0.45);
+      transition:border-color 0.28s ease,box-shadow 0.28s ease,transform 0.28s ease}
+    .card:hover{border-color:rgba(249,115,22,0.28);
+      box-shadow:0 10px 36px rgba(249,115,22,0.07),0 3px 10px rgba(0,0,0,0.5);
+      transform:translateY(-2px)}
+
+    /* ── Section eyebrow tag ── */
+    .etag{display:inline-flex;align-items:center;gap:8px;
+      font-size:0.68rem;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;
+      color:#F97316;margin-bottom:12px}
+    .etag::before{content:'';display:block;width:22px;height:2px;background:#F97316;border-radius:2px}
+
+    /* ── Nav ── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:box-shadow 0.3s ease}
+    .nav-inner{background:rgba(8,8,8,0.88);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+      border-bottom:1px solid rgba(255,255,255,0.06)}
+    .nav-link{position:relative;font-size:0.82rem;font-weight:600;letter-spacing:0.02em;
+      color:#787878;text-decoration:none;transition:color 0.2s ease;padding-bottom:2px}
+    .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1.5px;
+      background:#F97316;border-radius:2px;transform:scaleX(0);
+      transition:transform 0.22s cubic-bezier(0.34,1.56,0.64,1)}
+    .nav-link:hover{color:#fff}
+    .nav-link:hover::after{transform:scaleX(1)}
+
+    /* ── Hero ── */
+    .hero-bg{
+      background:
+        radial-gradient(ellipse 90% 70% at 55% 35%,rgba(249,115,22,0.11) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 50% at 5% 75%,rgba(249,115,22,0.05) 0%,transparent 60%),
+        #080808}
+
+    /* ── Floating ring animation ── */
+    @keyframes spin-slow{to{transform:rotate(360deg)}}
+    @keyframes spin-rev{to{transform:rotate(-360deg)}}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 0 40px rgba(249,115,22,0.15)}50%{box-shadow:0 0 80px rgba(249,115,22,0.35)}}
+    @keyframes shimmer{0%{background-position:-200% center}100%{background-position:200% center}}
+    @keyframes count-up-pop{0%{transform:scale(0.7);opacity:0}60%{transform:scale(1.08)}100%{transform:scale(1);opacity:1}}
+    @keyframes slide-left{from{opacity:0;transform:translateX(-36px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes slide-right{from{opacity:0;transform:translateX(36px)}to{opacity:1;transform:translateX(0)}}
+    @keyframes fade-up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes badge-pulse{0%,100%{transform:translateX(-50%) scale(1)}50%{transform:translateX(-50%) scale(1.06)}}
+    @keyframes flicker{0%,100%{opacity:1}92%{opacity:0.85}94%{opacity:1}}
+
+    /* ── AOS scroll reveal ── */
+    .aos{opacity:0;transform:translateY(32px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .aos-left{opacity:0;transform:translateX(-36px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .aos-right{opacity:0;transform:translateX(36px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .aos.visible,.aos-left.visible,.aos-right.visible{opacity:1;transform:none}
+
+    /* ── Stat counter ── */
+    .stat-num{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,4vw,3rem);
+      color:#F97316;line-height:1}
+    .stat-num.pop{animation:count-up-pop 0.6s cubic-bezier(0.34,1.56,0.64,1) both}
+
+    /* ── 9:16 video phone frame ── */
+    .phone-frame{
+      position:relative;width:100%;max-width:340px;margin:0 auto;
+      border-radius:24px;overflow:hidden;
+      border:2px solid rgba(249,115,22,0.25);
+      box-shadow:0 0 60px rgba(249,115,22,0.15),0 30px 80px rgba(0,0,0,0.7),
+                 inset 0 1px 0 rgba(255,255,255,0.05)}
+    .phone-frame::before{content:'';display:block;padding-top:177.78%}
+    .phone-frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .phone-glow{position:absolute;inset:-24px;border-radius:32px;
+      background:radial-gradient(ellipse 80% 80% at 50% 50%,rgba(249,115,22,0.12) 0%,transparent 70%);
+      pointer-events:none;animation:pulse-glow 3.5s ease-in-out infinite}
+
+    /* ── Courses schedule image ── */
+    .schedule-img{border-radius:16px;overflow:hidden;
+      box-shadow:0 0 50px rgba(249,115,22,0.1),0 20px 60px rgba(0,0,0,0.6);
+      border:1px solid rgba(249,115,22,0.18)}
+
+    /* ── Timing image ── */
+    .timing-img{border-radius:16px;overflow:hidden;
+      box-shadow:0 0 40px rgba(249,115,22,0.12),0 20px 50px rgba(0,0,0,0.55);
+      border:1px solid rgba(249,115,22,0.2)}
+
+    /* ── Plan featured ── */
+    .plan-hot{background:linear-gradient(155deg,#141109 0%,#1B1208 100%);
+      border-color:rgba(249,115,22,0.45)!important;
+      box-shadow:0 0 0 1px rgba(249,115,22,0.18),0 16px 48px rgba(249,115,22,0.14),0 4px 12px rgba(0,0,0,0.7)!important}
+    .plan-badge{animation:badge-pulse 2.8s ease-in-out infinite}
+    .shimmer-badge{background:linear-gradient(90deg,#F97316 0%,#FFB266 50%,#F97316 100%);
+      background-size:200% auto;animation:shimmer 2.5s linear infinite;
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+    /* ── Progress bar on CTA ── */
+    .urgency-bar{height:3px;background:rgba(249,115,22,0.15);border-radius:2px;overflow:hidden}
+    .urgency-fill{height:100%;width:68%;background:linear-gradient(90deg,#F97316,#FF9A47);
+      border-radius:2px;animation:shimmer 2s linear infinite;background-size:200% auto}
+
+    /* ── Quote card ── */
+    .quote-card{background:#0C0C0C;border:1px solid rgba(255,255,255,0.06);border-radius:12px;
+      padding:24px;transition:border-color 0.25s ease,transform 0.25s ease}
+    .quote-card:hover{border-color:rgba(249,115,22,0.2);transform:translateY(-2px)}
+
+    /* ── Mobile menu ── */
+    #mmenu{max-height:0;overflow:hidden;transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1)}
+    #mmenu.open{max-height:440px}
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar{width:5px}
+    ::-webkit-scrollbar-track{background:#080808}
+    ::-webkit-scrollbar-thumb{background:#222;border-radius:3px}
+    ::-webkit-scrollbar-thumb:hover{background:#F97316}
+
+    /* ── Floating CTA pulse ── */
+    .mobile-cta-wrap{animation:float 4s ease-in-out infinite}
+  </style>
+</head>
+
+<body class="grain">
+
+<!-- ══════════════════════════════════════════
+     NAV
+══════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="nav-inner">
+    <div class="max-w-7xl mx-auto px-5 flex items-center justify-between h-16">
+      <a href="#hero" class="flex-shrink-0">
+        <img src="brand_assets/newtechmainlogoMAIN.png" alt="Newtech Sports Center" class="h-10 w-auto" />
+      </a>
+      <div class="hidden md:flex items-center gap-7">
+        <a href="#decouvrir" class="nav-link">La salle</a>
+        <a href="#horaires" class="nav-link">Horaires</a>
+        <a href="#cours" class="nav-link">Cours</a>
+        <a href="#tarifs" class="nav-link">Tarifs</a>
+        <a href="#avis" class="nav-link">Avis</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <a href="https://tally.so/r/WOpBoj" target="_blank" class="hidden md:inline-flex btn-fire" style="padding:10px 22px;font-size:0.78rem;">
+        Réserver gratuitement
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <button id="hbg" aria-label="Menu" class="md:hidden p-2 flex flex-col gap-[5px]">
+        <span id="b1" class="block w-6 h-[2px] bg-white transition-all duration-300 origin-center"></span>
+        <span id="b2" class="block w-6 h-[2px] bg-white transition-opacity duration-300"></span>
+        <span id="b3" class="block w-6 h-[2px] bg-white transition-all duration-300 origin-center"></span>
+      </button>
+    </div>
+    <div id="mmenu" class="md:hidden px-5 pb-5 flex flex-col gap-2 border-t border-white/5">
+      <a href="#decouvrir" class="text-neutral-300 py-2.5 text-sm font-medium border-b border-white/5">La salle</a>
+      <a href="#horaires" class="text-neutral-300 py-2.5 text-sm font-medium border-b border-white/5">Horaires</a>
+      <a href="#cours" class="text-neutral-300 py-2.5 text-sm font-medium border-b border-white/5">Cours collectifs</a>
+      <a href="#tarifs" class="text-neutral-300 py-2.5 text-sm font-medium border-b border-white/5">Tarifs</a>
+      <a href="#avis" class="text-neutral-300 py-2.5 text-sm font-medium border-b border-white/5">Avis membres</a>
+      <a href="#contact" class="text-neutral-300 py-2.5 text-sm font-medium">Contact</a>
+      <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire mt-3">Réserver ma place gratuite</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero" class="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+  <!-- Deco rings -->
+  <div class="absolute right-[-10vw] top-[5%] w-[55vw] h-[55vw] rounded-full border border-or-500/[0.07] pointer-events-none" style="animation:spin-slow 28s linear infinite"></div>
+  <div class="absolute right-[-5vw] top-[10%] w-[40vw] h-[40vw] rounded-full border border-or-500/[0.05] pointer-events-none" style="animation:spin-rev 18s linear infinite"></div>
+  <div class="absolute right-[8%] top-[22%] w-72 h-72 rounded-full pointer-events-none" style="background:radial-gradient(circle,rgba(249,115,22,0.12) 0%,transparent 70%);filter:blur(40px)"></div>
+
+  <div class="max-w-7xl mx-auto px-5 py-24 w-full grid lg:grid-cols-2 gap-14 items-center">
+
+    <!-- Copy -->
+    <div>
+      <div class="etag" style="animation:slide-left 0.7s 0.1s ease both">Newtech Sports Center — Charguia 1, Ariana</div>
+
+      <h1 class="hxl text-white mb-5" style="font-size:clamp(3.8rem,9vw,7.5rem);animation:slide-left 0.75s 0.2s ease both">
+        Arrête de<br/>
+        <span style="color:#F97316;animation:flicker 8s 2s ease-in-out infinite">rêver.</span><br/>
+        Viens<br/>
+        <span style="color:#fff">le faire.</span>
+      </h1>
+
+      <p class="body-light text-lg max-w-md mb-9" style="animation:fade-up 0.7s 0.45s ease both">
+        La salle qui transforme les intentions en résultats. Équipement premium, coachs passionnés, ambiance qui te pousse à dépasser tes limites — chaque jour, 7j/7.
+      </p>
+
+      <div class="flex flex-wrap gap-4 mb-10" style="animation:fade-up 0.7s 0.55s ease both">
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire text-base" style="padding:18px 42px">
+          Je réserve ma place gratuite
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#decouvrir" class="btn-outline">
+          Découvrir la salle
+        </a>
+      </div>
+
+      <!-- Trust strip -->
+      <div class="flex flex-wrap items-center gap-5 pt-7" style="border-top:1px solid rgba(255,255,255,0.07);animation:fade-up 0.7s 0.65s ease both">
+        <div class="flex items-center gap-2">
+          <div class="flex gap-0.5">
+            <svg width="14" height="14" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="14" height="14" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="14" height="14" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="14" height="14" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="14" height="14" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <span class="text-sm font-bold text-white">4.9/5</span>
+          <span class="text-sm text-neutral-500">Google</span>
+        </div>
+        <div class="w-px h-4 bg-white/10"></div>
+        <span class="text-sm text-neutral-500">+<strong class="text-white">1 200</strong> membres actifs</span>
+        <div class="w-px h-4 bg-white/10"></div>
+        <span class="text-sm text-neutral-500">Ouvert <strong class="text-white">7j/7</strong></span>
+        <div class="w-px h-4 bg-white/10"></div>
+        <span class="text-sm text-neutral-500">Essai <strong class="text-or-500">gratuit</strong></span>
+      </div>
+    </div>
+
+    <!-- Logo orb -->
+    <div class="hidden lg:flex justify-center items-center" style="animation:fade-up 0.8s 0.3s ease both">
+      <div class="relative" style="animation:float 5s ease-in-out infinite">
+        <div class="absolute inset-0 rounded-full" style="background:radial-gradient(circle,rgba(249,115,22,0.2) 0%,transparent 70%);filter:blur(50px);scale:1.4;animation:pulse-glow 3s ease-in-out infinite"></div>
+        <div class="absolute inset-[-28px] rounded-full border border-or-500/20" style="animation:spin-slow 20s linear infinite"></div>
+        <div class="absolute inset-[-52px] rounded-full border border-or-500/10" style="animation:spin-rev 35s linear infinite"></div>
+        <div class="w-72 h-72 rounded-full flex items-center justify-center relative overflow-hidden"
+             style="background:#0F0F0F;border:1px solid rgba(249,115,22,0.22);box-shadow:0 0 80px rgba(249,115,22,0.18),inset 0 1px 0 rgba(255,255,255,0.04)">
+          <img src="brand_assets/newtechmainlogoMAIN.png" alt="Newtech" class="w-[80%] object-contain" />
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll hint -->
+  <div class="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-40" style="animation:float 2.5s ease-in-out infinite">
+    <span class="text-[10px] uppercase tracking-widest text-neutral-500">Découvrir</span>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     STATS
+══════════════════════════════════════════ -->
+<section style="background:linear-gradient(90deg,#0C0C0C 0%,#111 50%,#0C0C0C 100%);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)">
+  <div class="max-w-7xl mx-auto px-5 py-9 grid grid-cols-2 md:grid-cols-4 gap-8">
+    <div class="text-center aos">
+      <div class="stat-num" data-target="1200" data-suffix="+">0+</div>
+      <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Membres actifs</div>
+    </div>
+    <div class="text-center aos" style="transition-delay:0.1s">
+      <div class="stat-num" data-target="15" data-suffix="+">0+</div>
+      <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Coachs certifiés</div>
+    </div>
+    <div class="text-center aos" style="transition-delay:0.2s">
+      <div class="stat-num" data-target="8" data-suffix="+">0+</div>
+      <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Années d'expérience</div>
+    </div>
+    <div class="text-center aos" style="transition-delay:0.3s">
+      <div class="stat-num">300<span style="font-size:60%">m²</span></div>
+      <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Espace d'entraînement</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     INTRO VIDEO — "Découvrir la salle"
+══════════════════════════════════════════ -->
+<section id="decouvrir" class="py-24 max-w-7xl mx-auto px-5">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Text -->
+    <div class="aos-left">
+      <div class="etag">Bienvenue chez Newtech</div>
+      <h2 class="hlg text-white mb-5" style="font-size:clamp(2.4rem,5vw,4rem)">
+        Pas une salle ordinaire.<br/>
+        <span style="color:#F97316">Un vrai terrain<br/>de combat.</span>
+      </h2>
+      <p class="body-light mb-5 text-base">
+        Oublie les salles vides et les machines poussiéreuses. Chez Newtech, tu entres dans un espace où <strong class="text-white">chaque détail est pensé pour ta performance</strong> — de l'équipement aux coachs qui seront là pour toi du premier au dernier set.
+      </p>
+      <p class="body mb-9 text-base">
+        Que tu cherches à perdre du poids, prendre de la masse, ou juste te sentir mieux dans ton corps — on a le programme qui te correspond.
+      </p>
+      <div class="flex flex-wrap gap-4">
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire">
+          J'essaie gratuitement
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Mini stats inline -->
+      <div class="flex flex-wrap gap-6 mt-9 pt-7" style="border-top:1px solid rgba(255,255,255,0.06)">
+        <div>
+          <div class="text-2xl font-black text-white">06h–23h</div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wider font-semibold">Lun – Vendredi</div>
+        </div>
+        <div class="w-px bg-white/8"></div>
+        <div>
+          <div class="text-2xl font-black text-white">07h–18h</div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wider font-semibold">Samedi</div>
+        </div>
+        <div class="w-px bg-white/8"></div>
+        <div>
+          <div class="text-2xl font-black text-white">07h–15h</div>
+          <div class="text-xs text-neutral-500 uppercase tracking-wider font-semibold">Dimanche</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9:16 Video -->
+    <div class="flex justify-center aos-right">
+      <div class="relative w-full" style="max-width:360px">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <video
+            src="brand_assets/SaveGram.App_AQOW7xCF0RoSKoTC3qPPVuwCvugDoHV_C1HuZz8FO9TrF5dqAdp_0jC320-v7iwOFn8nHosfVMZYnygxAovalTHgQTnArcPbidqGbIs.mp4"
+            autoplay muted loop playsinline>
+          </video>
+        </div>
+        <!-- Play badge -->
+        <div class="absolute bottom-5 left-1/2 -translate-x-1/2 bg-black/70 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full border border-white/10 whitespace-nowrap">
+          📍 Charguia 1 — Ariana
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     WHY NEWTECH
+══════════════════════════════════════════ -->
+<section class="py-24" style="background:linear-gradient(180deg,#080808 0%,#0D0D0D 50%,#080808 100%)">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-14 aos">
+      <div class="etag justify-center">Ce qui nous différencie</div>
+      <h2 class="hlg text-white" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        L'excellence, ce n'est pas<br/>
+        <span style="color:#F97316">un bonus — c'est notre base.</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+      <div class="card p-7 aos">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-4 0v2M8 7V5a2 2 0 00-4 0v2"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-base mb-2">Équipement de Pro</h3>
+        <p class="body text-sm">Machines dernière génération, zone cardio, poids libres, espace fonctionnel. Tout ce qu'il te faut pour performer au maximum.</p>
+      </div>
+
+      <div class="card p-7 aos" style="transition-delay:0.1s">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-base mb-2">Coachs qui t'élèvent</h3>
+        <p class="body text-sm">Pas des coachs qui regardent leur téléphone. Les nôtres sont là, avec toi, à chaque séance. Ton programme évolue avec toi.</p>
+      </div>
+
+      <div class="card p-7 aos" style="transition-delay:0.2s">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-base mb-2">Une Communauté qui Pousse</h3>
+        <p class="body text-sm">L'énergie collective fait la différence. Ici, tout le monde se tire vers le haut. Tu ne t'entraînes jamais vraiment seul.</p>
+      </div>
+
+      <div class="card p-7 aos" style="transition-delay:0.3s">
+        <div class="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.18)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3 class="text-white font-bold text-base mb-2">Des Résultats Réels</h3>
+        <p class="body text-sm">Pas de promesses en l'air. On suit tes progrès, on ajuste ton plan, on célèbre tes victoires. Les résultats parlent d'eux-mêmes.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TOP MACHINES
+══════════════════════════════════════════ -->
+<section class="py-24" style="background:linear-gradient(180deg,#080808 0%,#0D0D0D 50%,#080808 100%)">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text left -->
+      <div class="aos-left">
+        <div class="etag">Équipement exclusif</div>
+        <h2 class="hlg text-white mb-5" style="font-size:clamp(2.4rem,5vw,4rem)">
+          3 machines que tu ne<br/>trouveras
+          <span style="color:#F97316"> nulle part<br/>ailleurs en Tunisie.</span>
+        </h2>
+        <p class="body-light mb-5 text-base">
+          On n'a pas juste acheté des équipements — on a fait venir des <strong class="text-white">machines exclusives introuvables ailleurs dans le pays</strong>. Des appareils de niveau international, conçus pour des résultats que les salles classiques ne peuvent tout simplement pas t'offrir.
+        </p>
+        <p class="body mb-9 text-base">
+          Regarde par toi-même. Ces machines sont là, elles t'attendent — et elles sont réservées aux membres Newtech.
+        </p>
+
+        <!-- 3 points -->
+        <div class="space-y-4 mb-9">
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2)">
+              <span class="font-black text-sm" style="color:#F97316">01</span>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm mb-0.5">Importées directement</div>
+              <div class="body text-sm">Équipements premium importés de marques de renommée mondiale.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2)">
+              <span class="font-black text-sm" style="color:#F97316">02</span>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm mb-0.5">Exclusives à Newtech</div>
+              <div class="body text-sm">Ces 3 machines n'existent dans aucune autre salle en Tunisie.</div>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style="background:rgba(249,115,22,0.12);border:1px solid rgba(249,115,22,0.2)">
+              <span class="font-black text-sm" style="color:#F97316">03</span>
+            </div>
+            <div>
+              <div class="text-white font-bold text-sm mb-0.5">Résultats accélérés</div>
+              <div class="body text-sm">Entraînements plus ciblés, récupération optimisée, progression plus rapide.</div>
+            </div>
+          </div>
+        </div>
+
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire">
+          Venir tester ces machines
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- 9:16 video right -->
+      <div class="flex justify-center aos-right">
+        <div class="relative w-full" style="max-width:360px">
+          <div class="phone-glow"></div>
+          <div class="phone-frame">
+            <video
+              src="brand_assets/topmachines.mp4"
+              poster="brand_assets/thumbnail.png"
+              controls playsinline preload="metadata"
+              style="background:#080808">
+            </video>
+          </div>
+          <div class="absolute -top-4 left-1/2 -translate-x-1/2 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full whitespace-nowrap"
+               style="background:linear-gradient(135deg,#FF8C2A,#F97316,#E06010);box-shadow:0 4px 18px rgba(249,115,22,0.5);animation:badge-pulse 2.8s ease-in-out infinite">
+            🏆 Exclusif Tunisie
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     HORAIRES — timing.jpg
+══════════════════════════════════════════ -->
+<section id="horaires" class="py-24 max-w-7xl mx-auto px-5">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- Image -->
+    <div class="timing-img aos-left">
+      <img src="brand_assets/timingMAIN.png" alt="Horaires Newtech Sports Center" class="w-full" />
+    </div>
+
+    <!-- Text -->
+    <div class="aos-right">
+      <div class="etag">Horaires d'ouverture</div>
+      <h2 class="hlg text-white mb-5" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        On est là<br/>
+        <span style="color:#F97316">quand tu as<br/>besoin de nous.</span>
+      </h2>
+      <p class="body-light mb-8 text-base">
+        Tôt le matin avant le boulot, après une longue journée, le week-end avec les amis — Newtech est ouvert <strong class="text-white">7 jours sur 7</strong> avec des horaires pensés pour s'adapter à ta vie, pas l'inverse.
+      </p>
+
+      <!-- Hours cards -->
+      <div class="space-y-3">
+        <div class="flex items-center justify-between p-4 rounded-xl" style="background:#111;border:1px solid rgba(249,115,22,0.15)">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.12)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="text-white font-semibold text-sm">Lundi – Vendredi</span>
+          </div>
+          <span class="text-or-500 font-bold text-sm">06h00 – 23h00</span>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-xl" style="background:#111;border:1px solid rgba(255,255,255,0.06)">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.07)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="text-white font-semibold text-sm">Samedi</span>
+          </div>
+          <span class="text-white font-bold text-sm">07h00 – 18h00</span>
+        </div>
+        <div class="flex items-center justify-between p-4 rounded-xl" style="background:#111;border:1px solid rgba(255,255,255,0.06)">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:rgba(249,115,22,0.07)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <span class="text-white font-semibold text-sm">Dimanche</span>
+          </div>
+          <span class="text-white font-bold text-sm">07h00 – 15h00</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 mt-6 p-4 rounded-xl" style="background:rgba(249,115,22,0.06);border:1px solid rgba(249,115,22,0.18)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="text-sm text-neutral-300"><strong class="text-white">29 Rue des Minéraux</strong>, Charguia 1 – Ariana</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     COURS COLLECTIFS — cours.jpg
+══════════════════════════════════════════ -->
+<section id="cours" class="py-24" style="background:linear-gradient(180deg,#080808 0%,#0D0D0D 50%,#080808 100%)">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+      <!-- Text -->
+      <div class="aos-left">
+        <div class="etag">Cours collectifs</div>
+        <h2 class="hlg text-white mb-5" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+          Plus de 10 cours<br/>
+          <span style="color:#F97316">pour tous<br/>les niveaux.</span>
+        </h2>
+        <p class="body-light mb-6 text-base">
+          Spinning, Pilates, CAF, Boxe, Circuit Training, Body Combat, Body Pump, Body Attack, GRIT, 100% Abdos — un planning <strong class="text-white">riche et varié</strong> pour ne jamais s'ennuyer et toujours progresser.
+        </p>
+        <p class="body mb-8 text-base">
+          Des cours le matin, le midi et le soir — adaptés à tous les emplois du temps. Débutant ou confirmé, il y a une séance faite pour toi.
+        </p>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-2 mb-8">
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">CAF</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Spinning</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Pilates</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Boxe</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Les Mills</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Circuit Training</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">100% Abdos</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Body Pump</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Body Combat</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Body Attack</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">GRIT</span>
+          <span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">Danse Orientale</span>
+        </div>
+
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire">
+          Réserver un cours d'essai
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <!-- Schedule image -->
+      <div class="schedule-img aos-right">
+        <img src="brand_assets/coursMAIN.png" alt="Planning des cours collectifs Newtech" class="w-full" />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     PROGRAMMES CARDS
+══════════════════════════════════════════ -->
+<section class="py-24 max-w-7xl mx-auto px-5">
+  <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+    <div class="aos">
+      <div class="etag">Programmes</div>
+      <h2 class="hlg text-white" style="font-size:clamp(2rem,4.5vw,3.4rem)">
+        Un programme pour<br/>
+        <span style="color:#F97316">chaque objectif</span>
+      </h2>
+    </div>
+    <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-outline aos" style="transition-delay:0.2s">
+      Démarrer maintenant
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+    <div class="card rounded-xl overflow-hidden aos">
+      <div class="relative overflow-hidden" style="height:200px">
+        <img src="https://placehold.co/600x400/111/F97316?text=Musculation" alt="Musculation" class="w-full h-full object-cover" style="transition:transform 0.5s ease"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(249,115,22,0.1) 50%,transparent 70%)"></div>
+      </div>
+      <div class="p-5">
+        <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">Force & Masse</span>
+        <h3 class="text-white font-bold text-lg mt-1 mb-2">Musculation</h3>
+        <p class="body text-sm">Poids libres, machines guidées, zone powerlifting. Tout ce qu'il faut pour sculpter ton corps.</p>
+      </div>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden aos" style="transition-delay:0.1s">
+      <div class="relative overflow-hidden" style="height:200px">
+        <img src="https://placehold.co/600x400/111/F97316?text=Cardio+%26+HIIT" alt="Cardio" class="w-full h-full object-cover" style="transition:transform 0.5s ease"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(249,115,22,0.1) 50%,transparent 70%)"></div>
+      </div>
+      <div class="p-5">
+        <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">Endurance</span>
+        <h3 class="text-white font-bold text-lg mt-1 mb-2">Cardio & HIIT</h3>
+        <p class="body text-sm">Brûle plus de calories, booste ton énergie. Des séances intenses pour des résultats rapides.</p>
+      </div>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden aos" style="transition-delay:0.2s">
+      <div class="relative overflow-hidden" style="height:200px">
+        <img src="https://placehold.co/600x400/111/F97316?text=Boxe+%26+MMA" alt="Boxe" class="w-full h-full object-cover" style="transition:transform 0.5s ease"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(249,115,22,0.1) 50%,transparent 70%)"></div>
+      </div>
+      <div class="p-5">
+        <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">Arts Martiaux</span>
+        <h3 class="text-white font-bold text-lg mt-1 mb-2">Boxe & MMA</h3>
+        <p class="body text-sm">Techniques de combat, défense personnelle et cardio extrême. Pour les guerriers qui sommeillent en toi.</p>
+      </div>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden aos" style="transition-delay:0.3s">
+      <div class="relative overflow-hidden" style="height:200px">
+        <img src="https://placehold.co/600x400/111/F97316?text=CrossFit" alt="CrossFit" class="w-full h-full object-cover" style="transition:transform 0.5s ease"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(249,115,22,0.1) 50%,transparent 70%)"></div>
+      </div>
+      <div class="p-5">
+        <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">Performance</span>
+        <h3 class="text-white font-bold text-lg mt-1 mb-2">CrossFit</h3>
+        <p class="body text-sm">WODs variés pour une condition physique générale au top. Chaque jour est un nouveau challenge.</p>
+      </div>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden aos" style="transition-delay:0.4s">
+      <div class="relative overflow-hidden" style="height:200px">
+        <img src="https://placehold.co/600x400/111/F97316?text=Bien-%C3%AAtre" alt="Yoga" class="w-full h-full object-cover" style="transition:transform 0.5s ease"/>
+        <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(8,8,8,0.88) 0%,rgba(249,115,22,0.1) 50%,transparent 70%)"></div>
+      </div>
+      <div class="p-5">
+        <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">Bien-être</span>
+        <h3 class="text-white font-bold text-lg mt-1 mb-2">Yoga & Stretching</h3>
+        <p class="body text-sm">Récupération, souplesse et équilibre mental. Le complément parfait à ton entraînement intensif.</p>
+      </div>
+    </div>
+
+    <div class="card rounded-xl overflow-hidden aos" style="transition-delay:0.5s;background:linear-gradient(135deg,#130D08 0%,#1C1108 100%);border-color:rgba(249,115,22,0.22)!important">
+      <div class="p-7 flex flex-col justify-between" style="min-height:310px">
+        <div>
+          <span class="text-[11px] font-bold uppercase tracking-widest" style="color:#F97316">⭐ Exclusif</span>
+          <h3 class="text-white font-bold text-2xl mt-2 mb-3">Coaching<br/>100% Perso</h3>
+          <p class="body text-sm">Programme sur-mesure, suivi quotidien, résultats accélérés. La voie la plus directe vers tes objectifs.</p>
+        </div>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire mt-5" style="font-size:0.8rem;padding:13px 22px">
+          Réserver une séance d'essai
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TARIFS
+══════════════════════════════════════════ -->
+<section id="tarifs" class="py-24" style="background:linear-gradient(180deg,#080808 0%,#0D0D0D 50%,#080808 100%)">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-14 aos">
+      <div class="etag justify-center">Abonnements</div>
+      <h2 class="hlg text-white" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        Investis dans toi-même —<br/>
+        <span style="color:#F97316">à partir de 60 DT/mois</span>
+      </h2>
+      <p class="body max-w-xl mx-auto mt-4">Accès illimité, vestiaires, douches, coachs disponibles. Pas de frais cachés, pas de mauvaise surprise.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+      <!-- 3 mois -->
+      <div class="card p-8 aos">
+        <div class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
+        <div class="hlg text-white mb-4" style="font-size:1.5rem">3 Mois</div>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="hlg text-white" style="font-size:3.5rem">420</span>
+          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+        </div>
+        <p class="text-neutral-600 text-xs mb-7">soit 140 DT / mois</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Vestiaires & douches
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Coachs disponibles
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-600">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Cours collectifs
+          </li>
+        </ul>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-outline w-full justify-center">Choisir ce plan</a>
+      </div>
+
+      <!-- 6 mois -->
+      <div class="card p-8 aos" style="transition-delay:0.1s">
+        <div class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
+        <div class="hlg text-white mb-4" style="font-size:1.5rem">6 Mois</div>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="hlg text-white" style="font-size:3.5rem">575</span>
+          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+        </div>
+        <p class="text-neutral-600 text-xs mb-7">soit ~96 DT / mois</p>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Vestiaires & douches
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Coachs disponibles
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bilan de progression
+          </li>
+        </ul>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-outline w-full justify-center">Choisir ce plan</a>
+      </div>
+
+      <!-- 1 an — HOT -->
+      <div class="card plan-hot p-8 aos relative" style="transition-delay:0.2s">
+        <div class="plan-badge absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-[11px] font-black uppercase tracking-widest px-5 py-1.5 rounded-full whitespace-nowrap"
+             style="background:linear-gradient(135deg,#FF8C2A,#F97316,#E06010)">
+          🔥 Offre active
+        </div>
+        <div class="text-[11px] font-bold uppercase tracking-widest text-or-500 mb-1">Abonnement</div>
+        <div class="hlg text-white mb-4" style="font-size:1.5rem">1 An</div>
+        <div class="flex items-end gap-2 mb-1">
+          <span class="hlg text-white" style="font-size:3.5rem">720</span>
+          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+        </div>
+        <div class="flex items-center flex-wrap gap-2 mb-7">
+          <span class="text-neutral-600 text-xs line-through">840 DT</span>
+          <span class="text-[11px] font-black text-or-500 px-2 py-0.5 rounded-full" style="background:rgba(249,115,22,0.12)">–14%</span>
+          <span class="text-neutral-600 text-xs">soit 60 DT / mois</span>
+        </div>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Vestiaires & douches
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Coachs disponibles
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bilans mensuels inclus
+          </li>
+          <li class="flex items-center gap-2.5 text-sm text-neutral-300">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Cours collectifs inclus
+          </li>
+        </ul>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire w-full justify-center">
+          Profiter de l'offre
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+
+    <p class="text-center text-neutral-600 text-sm mt-7">
+      Pas sûr du bon plan ? <a href="https://tally.so/r/WOpBoj" target="_blank" style="color:#F97316" class="hover:underline font-semibold">Contacte notre équipe</a> — on te guide en 5 minutes.
+    </p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TESTIMONIALS
+══════════════════════════════════════════ -->
+<section id="avis" class="py-24" style="background:#0A0A0A;border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)">
+  <div class="max-w-7xl mx-auto px-5">
+    <div class="text-center mb-14 aos">
+      <div class="etag justify-center">Avis membres</div>
+      <h2 class="hlg text-white" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        Ils ont décidé.<br/>
+        <span style="color:#F97316">Leur corps a suivi.</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-5">
+
+      <div class="quote-card aos">
+        <div style="color:rgba(249,115,22,0.3);font-size:3.5rem;line-height:1;font-family:Georgia,serif">"</div>
+        <p class="text-neutral-300 text-sm leading-relaxed -mt-2 mb-5">En 3 mois chez Newtech, j'ai perdu 12 kg et retrouvé une confiance que je n'avais jamais eue. Les coachs sont là pour de vrai — pas juste pour encaisser l'abonnement.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style="background:rgba(249,115,22,0.15);color:#F97316">AK</div>
+          <div>
+            <div class="text-white font-bold text-sm">Ahmed K.</div>
+            <div class="text-neutral-600 text-xs">Membre depuis 2023</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card aos" style="transition-delay:0.1s">
+        <div style="color:rgba(249,115,22,0.3);font-size:3.5rem;line-height:1;font-family:Georgia,serif">"</div>
+        <p class="text-neutral-300 text-sm leading-relaxed -mt-2 mb-5">La meilleure salle d'Ariana, sans aucun doute. Propre, bien équipée, et l'ambiance est unique. On se sent bien dès qu'on entre — on a envie de revenir chaque jour.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style="background:rgba(249,115,22,0.15);color:#F97316">SB</div>
+          <div>
+            <div class="text-white font-bold text-sm">Sarra B.</div>
+            <div class="text-neutral-600 text-xs">Membre depuis 2022</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-card aos" style="transition-delay:0.2s">
+        <div style="color:rgba(249,115,22,0.3);font-size:3.5rem;line-height:1;font-family:Georgia,serif">"</div>
+        <p class="text-neutral-300 text-sm leading-relaxed -mt-2 mb-5">J'ai essayé plusieurs salles à Tunis. Newtech, c'est une autre catégorie. Le suivi personnalisé et les cours collectifs m'ont complètement changé la façon de m'entraîner.</p>
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black" style="background:rgba(249,115,22,0.15);color:#F97316">YM</div>
+          <div>
+            <div class="text-white font-bold text-sm">Yassine M.</div>
+            <div class="text-neutral-600 text-xs">Membre depuis 2024</div>
+          </div>
+          <div class="ml-auto flex gap-0.5">
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg width="11" height="11" fill="#F97316" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     OPINIONS VIDEO — 9:16
+══════════════════════════════════════════ -->
+<section class="py-24 max-w-7xl mx-auto px-5">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+    <!-- 9:16 Video left -->
+    <div class="flex justify-center order-2 lg:order-1 aos-left">
+      <div class="relative w-full" style="max-width:360px">
+        <div class="phone-glow"></div>
+        <div class="phone-frame">
+          <video
+            src="brand_assets/SaveGram.App_AQPzra-shosErZ_0mhwFJEOSG9ZxmPJZPWhjcUxA4LBPgCnUxxhjs2vtCTpkL4r13ofW0KCYoz2Xn15pNXXpz5caRM4HEWWYf8cdXKA.mp4"
+            controls playsinline preload="metadata">
+          </video>
+        </div>
+        <div class="absolute top-5 right-[-10px] bg-black/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-widest px-3 py-2 rounded-full border border-white/10 whitespace-nowrap rotate-3">
+          ❤️ Ils en parlent
+        </div>
+      </div>
+    </div>
+
+    <!-- Text right -->
+    <div class="order-1 lg:order-2 aos-right">
+      <div class="etag">Ce qu'ils disent</div>
+      <h2 class="hlg text-white mb-5" style="font-size:clamp(2.2rem,5vw,3.8rem)">
+        Regarde, écoute,<br/>
+        <span style="color:#F97316">puis décide<br/>par toi-même.</span>
+      </h2>
+      <p class="body-light mb-8 text-base">
+        Pas de promesses en l'air — juste des vrais membres qui racontent leur expérience avec leurs propres mots. Ces transformations, elles pourraient être les tiennes.
+      </p>
+
+      <!-- Mini testimonials inline -->
+      <div class="space-y-3 mb-9">
+        <div class="flex items-start gap-3 p-4 rounded-xl" style="background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.12)">
+          <span style="color:#F97316;font-size:1.8rem;line-height:1;font-family:Georgia,serif">"</span>
+          <p class="text-neutral-300 text-sm leading-relaxed">L'équipe est au top, l'ambiance est incomparable. Je me sens chez moi ici.</p>
+        </div>
+        <div class="flex items-start gap-3 p-4 rounded-xl" style="background:rgba(249,115,22,0.05);border:1px solid rgba(249,115,22,0.12)">
+          <span style="color:#F97316;font-size:1.8rem;line-height:1;font-family:Georgia,serif">"</span>
+          <p class="text-neutral-300 text-sm leading-relaxed">En 2 mois j'ai eu des résultats que je n'avais jamais obtenus ailleurs. Merci Newtech !</p>
+        </div>
+      </div>
+
+      <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire">
+        Rejoindre la communauté
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     BIG CTA
+══════════════════════════════════════════ -->
+<section class="py-32 relative overflow-hidden" style="background:radial-gradient(ellipse 100% 80% at 50% 50%,rgba(249,115,22,0.1) 0%,transparent 65%),#080808">
+  <div class="absolute pointer-events-none overflow-hidden inset-0">
+    <div class="absolute -left-40 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style="background:radial-gradient(circle,rgba(249,115,22,0.06) 0%,transparent 70%);filter:blur(60px)"></div>
+    <div class="absolute -right-40 top-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full" style="background:radial-gradient(circle,rgba(249,115,22,0.05) 0%,transparent 70%);filter:blur(60px)"></div>
+  </div>
+  <div class="max-w-3xl mx-auto px-5 text-center relative">
+    <div class="aos">
+      <div class="etag justify-center">La décision t'appartient</div>
+      <h2 class="hlg text-white mb-5" style="font-size:clamp(3rem,7vw,6rem)">
+        La meilleure version<br/>de toi-même est à<br/>
+        <span style="color:#F97316">un clic d'ici.</span>
+      </h2>
+      <p class="body-light text-lg max-w-xl mx-auto mb-4">
+        Réserve ta séance d'essai gratuite maintenant. Notre équipe te contacte dans les <strong class="text-white">24h</strong> pour confirmer ton créneau.
+      </p>
+
+      <!-- Urgency bar -->
+      <div class="max-w-xs mx-auto mb-8">
+        <div class="flex justify-between text-xs text-neutral-600 mb-2">
+          <span>Places disponibles cette semaine</span>
+          <span class="font-bold" style="color:#F97316">68%</span>
+        </div>
+        <div class="urgency-bar">
+          <div class="urgency-fill"></div>
+        </div>
+      </div>
+
+      <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire text-base" style="padding:22px 56px">
+        Je réserve ma place — c'est gratuit
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="text-neutral-600 text-sm mt-5">Sans engagement · Sans carte bancaire · Annulation libre</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer id="contact" style="background:#050505;border-top:1px solid rgba(255,255,255,0.06)">
+  <div class="max-w-7xl mx-auto px-5 py-16 grid md:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div class="md:col-span-2">
+      <img src="brand_assets/newtechmainlogoMAIN.png" alt="Newtech Sports Center" class="h-11 mb-4" />
+      <p class="body text-sm max-w-xs mb-6">La salle de sport référence à Charguia 1, Ariana. Équipement premium, coachs certifiés, résultats garantis.</p>
+      <div class="flex gap-3">
+        <a href="#" aria-label="Facebook" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-200" style="background:#111;border:1px solid rgba(255,255,255,0.08);color:#555">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" class="hover:text-or-500"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-200" style="background:#111;border:1px solid rgba(255,255,255,0.08);color:#555">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok" class="w-9 h-9 rounded-lg flex items-center justify-center transition-colors duration-200" style="background:#111;border:1px solid rgba(255,255,255,0.08);color:#555">
+          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <div>
+      <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Navigation</h4>
+      <ul class="space-y-3">
+        <li><a href="#decouvrir" class="body text-sm hover:text-or-500 transition-colors duration-150">La salle</a></li>
+        <li><a href="#horaires" class="body text-sm hover:text-or-500 transition-colors duration-150">Horaires</a></li>
+        <li><a href="#cours" class="body text-sm hover:text-or-500 transition-colors duration-150">Cours collectifs</a></li>
+        <li><a href="#tarifs" class="body text-sm hover:text-or-500 transition-colors duration-150">Abonnements</a></li>
+        <li><a href="#avis" class="body text-sm hover:text-or-500 transition-colors duration-150">Avis membres</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h4 class="text-white font-bold text-xs uppercase tracking-widest mb-5">Nous trouver</h4>
+      <ul class="space-y-4">
+        <li class="flex items-start gap-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" class="mt-0.5 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="body text-sm">29 Rue des Minéraux,<br/>Charguia 1 – Ariana</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" class="mt-0.5 flex-shrink-0"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.34 8.82 19.79 19.79 0 01.25 2.18 2 2 0 012.22 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.08 6.08l1.27-.56a2 2 0 012.11.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          <span class="body text-sm">57 099 450<br/>57 099 451</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.2" class="mt-0.5 flex-shrink-0"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span class="body text-sm">Lun–Ven : 06h–23h<br/>Sam : 07h–18h<br/>Dim : 07h–15h</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="px-5 py-5 flex flex-col sm:flex-row items-center justify-between gap-3" style="border-top:1px solid rgba(255,255,255,0.04)">
+    <p class="text-neutral-700 text-xs">© 2026 Newtech Sports Center. Tous droits réservés.</p>
+    <p class="text-neutral-700 text-xs">29 Rue des Minéraux, Charguia 1 – Ariana · 57 099 450</p>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════
+     FLOATING CTA (mobile only)
+══════════════════════════════════════════ -->
+<div class="mobile-cta-wrap fixed bottom-4 left-4 right-4 z-50 md:hidden">
+  <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire w-full justify-center text-sm" style="border-radius:10px;padding:16px;box-shadow:0 8px 30px rgba(249,115,22,0.5)">
+    Réserver ma place gratuite
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+</div>
+
+
+<script>
+  /* ── Mobile menu ── */
+  const hbg = document.getElementById('hbg');
+  const mmenu = document.getElementById('mmenu');
+  const b1 = document.getElementById('b1');
+  const b2 = document.getElementById('b2');
+  const b3 = document.getElementById('b3');
+  hbg.addEventListener('click', () => {
+    const open = mmenu.classList.toggle('open');
+    b1.style.transform = open ? 'translateY(7px) rotate(45deg)' : '';
+    b2.style.opacity = open ? '0' : '1';
+    b3.style.transform = open ? 'translateY(-7px) rotate(-45deg)' : '';
+  });
+  mmenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mmenu.classList.remove('open');
+    b1.style.transform = b3.style.transform = '';
+    b2.style.opacity = '1';
+  }));
+
+  /* ── AOS scroll reveal ── */
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.aos, .aos-left, .aos-right').forEach(el => revealObs.observe(el));
+
+  /* ── Counter animation ── */
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.target);
+      const suffix = el.dataset.suffix || '';
+      if (!target) return;
+      counterObs.unobserve(el);
+      el.classList.add('pop');
+      const dur = 1400;
+      const step = 16;
+      const steps = dur / step;
+      let current = 0;
+      const inc = target / steps;
+      const timer = setInterval(() => {
+        current = Math.min(current + inc, target);
+        el.textContent = Math.floor(current).toLocaleString('fr') + suffix;
+        if (current >= target) clearInterval(timer);
+      }, step);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+  /* ── Nav shadow on scroll ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').style.boxShadow =
+      window.scrollY > 50 ? '0 4px 24px rgba(0,0,0,0.6)' : 'none';
+  }, { passive: true });
+
+  /* ── Programme card image hover scale ── */
+  document.querySelectorAll('.card img').forEach(img => {
+    const card = img.closest('.card');
+    if (!card) return;
+    card.addEventListener('mouseenter', () => img.style.transform = 'scale(1.05)');
+    card.addEventListener('mouseleave', () => img.style.transform = '');
+  });
+
+  /* ── Render course tags (template literal in HTML body workaround) ── */
+  document.querySelectorAll('[data-tags]').forEach(el => {
+    const tags = JSON.parse(el.dataset.tags);
+    el.innerHTML = tags.map(t =>
+      `<span class="text-xs font-bold uppercase tracking-wide px-3 py-1.5 rounded-full" style="background:rgba(249,115,22,0.1);border:1px solid rgba(249,115,22,0.2);color:#F97316">${t}</span>`
+    ).join('');
+  });
+</script>
+
+</body>
+</html>
