@@ -28,7 +28,9 @@
   <style>
     /* ── Reset & base ── */
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html,body{overflow-x:hidden;max-width:100%}
     html{font-family:'Inter',sans-serif;background:#080808;color:#fff;scroll-behavior:smooth}
+    body{position:relative}
     img,video{display:block;max-width:100%}
 
     /* ── Grain texture ── */
@@ -171,8 +173,9 @@
     .quote-card:hover{border-color:rgba(249,115,22,0.2);transform:translateY(-2px)}
 
     /* ── Mobile menu ── */
-    #mmenu{max-height:0;overflow:hidden;transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1)}
-    #mmenu.open{max-height:440px}
+    #mmenu{max-height:0;overflow:hidden;opacity:0;visibility:hidden;
+      transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1),opacity 0.25s ease,visibility 0.25s ease}
+    #mmenu.open{max-height:440px;opacity:1;visibility:visible}
 
     /* ── Scrollbar ── */
     ::-webkit-scrollbar{width:5px}
@@ -230,7 +233,7 @@
 <!-- ══════════════════════════════════════════
      HERO
 ══════════════════════════════════════════ -->
-<section id="hero" class="hero-bg min-h-screen flex items-center pt-16 relative overflow-hidden">
+<section id="hero" class="hero-bg min-h-screen flex items-center pt-16 relative" style="overflow:hidden;max-width:100vw">
   <!-- Deco rings -->
   <div class="absolute right-[-10vw] top-[5%] w-[55vw] h-[55vw] rounded-full border border-or-500/[0.07] pointer-events-none" style="animation:spin-slow 28s linear infinite"></div>
   <div class="absolute right-[-5vw] top-[10%] w-[40vw] h-[40vw] rounded-full border border-or-500/[0.05] pointer-events-none" style="animation:spin-rev 18s linear infinite"></div>
@@ -1096,7 +1099,7 @@
 <!-- ══════════════════════════════════════════
      FLOATING CTA (mobile only)
 ══════════════════════════════════════════ -->
-<div class="mobile-cta-wrap fixed bottom-4 left-4 right-4 z-50 md:hidden">
+<div class="mobile-cta-wrap fixed bottom-4 z-50 md:hidden" style="left:16px;right:16px;max-width:calc(100vw - 32px)">
   <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire w-full justify-center text-sm" style="border-radius:10px;padding:16px;box-shadow:0 8px 30px rgba(249,115,22,0.5)">
     Réserver ma place gratuite
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
