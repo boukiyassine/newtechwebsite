@@ -185,6 +185,20 @@
 
     /* ── Floating CTA pulse ── */
     .mobile-cta-wrap{animation:float 4s ease-in-out infinite}
+
+    /* ── Mobile pricing cards ── */
+    @media (max-width:767px){
+      .price-card{padding:10px 7px!important}
+      .price-plan-name{font-size:0.95rem!important}
+      .price-tag{display:none}
+      .price-num{font-size:2rem!important}
+      .price-dt{font-size:0.85rem!important;margin-bottom:4px!important}
+      .price-period{display:none}
+      .price-features{display:none}
+      .price-cta{padding:10px 4px!important;font-size:0.58rem!important;letter-spacing:0.02em!important;gap:3px}
+      .price-cta svg{display:none}
+      .plan-badge{font-size:0.55rem!important;padding:4px 8px!important;top:-10px!important;white-space:nowrap}
+    }
   </style>
 </head>
 
@@ -316,7 +330,7 @@
 <section style="background:linear-gradient(90deg,#0C0C0C 0%,#111 50%,#0C0C0C 100%);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)">
   <div class="max-w-7xl mx-auto px-5 py-9 grid grid-cols-2 md:grid-cols-4 gap-8">
     <div class="text-center aos">
-      <div class="stat-num" data-target="1200" data-suffix="+">0+</div>
+      <div class="stat-num" data-target="2500" data-suffix="+">0+</div>
       <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Membres actifs</div>
     </div>
     <div class="text-center aos" style="transition-delay:0.1s">
@@ -324,11 +338,11 @@
       <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Coachs certifiés</div>
     </div>
     <div class="text-center aos" style="transition-delay:0.2s">
-      <div class="stat-num" data-target="8" data-suffix="+">0+</div>
+      <div class="stat-num" data-target="4" data-suffix="+">0+</div>
       <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Années d'expérience</div>
     </div>
     <div class="text-center aos" style="transition-delay:0.3s">
-      <div class="stat-num">300<span style="font-size:60%">m²</span></div>
+      <div class="stat-num">300 m²</div>
       <div class="text-[11px] uppercase tracking-widest text-neutral-500 font-bold mt-1">Espace d'entraînement</div>
     </div>
   </div>
@@ -761,18 +775,18 @@
       <p class="body max-w-xl mx-auto mt-4">Accès illimité, vestiaires, douches, coachs disponibles. Pas de frais cachés, pas de mauvaise surprise.</p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+    <div class="grid grid-cols-3 gap-2 md:gap-6 max-w-5xl mx-auto">
 
       <!-- 3 mois -->
-      <div class="card p-8 aos">
-        <div class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
-        <div class="hlg text-white mb-4" style="font-size:1.5rem">3 Mois</div>
+      <div class="card price-card p-8 aos">
+        <div class="price-tag text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
+        <div class="price-plan-name hlg text-white mb-3" style="font-size:1.5rem">3 Mois</div>
         <div class="flex items-end gap-2 mb-1">
-          <span class="hlg text-white" style="font-size:3.5rem">420</span>
-          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+          <span class="price-num hlg text-white" style="font-size:3.5rem">420</span>
+          <span class="price-dt text-neutral-500 mb-2 font-bold text-lg">DT</span>
         </div>
-        <p class="text-neutral-600 text-xs mb-7">soit 140 DT / mois</p>
-        <ul class="space-y-3 mb-8">
+        <p class="price-period text-neutral-600 text-xs mb-7">soit 140 DT / mois</p>
+        <ul class="price-features space-y-3 mb-8">
           <li class="flex items-center gap-2.5 text-sm text-neutral-300">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
           </li>
@@ -786,19 +800,19 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>Cours collectifs
           </li>
         </ul>
-        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-outline w-full justify-center">Choisir ce plan</a>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="price-cta btn-outline w-full justify-center">Choisir ce plan</a>
       </div>
 
       <!-- 6 mois -->
-      <div class="card p-8 aos" style="transition-delay:0.1s">
-        <div class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
-        <div class="hlg text-white mb-4" style="font-size:1.5rem">6 Mois</div>
+      <div class="card price-card p-8 aos" style="transition-delay:0.1s">
+        <div class="price-tag text-[11px] font-bold uppercase tracking-widest text-neutral-600 mb-1">Abonnement</div>
+        <div class="price-plan-name hlg text-white mb-3" style="font-size:1.5rem">6 Mois</div>
         <div class="flex items-end gap-2 mb-1">
-          <span class="hlg text-white" style="font-size:3.5rem">575</span>
-          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+          <span class="price-num hlg text-white" style="font-size:3.5rem">575</span>
+          <span class="price-dt text-neutral-500 mb-2 font-bold text-lg">DT</span>
         </div>
-        <p class="text-neutral-600 text-xs mb-7">soit ~96 DT / mois</p>
-        <ul class="space-y-3 mb-8">
+        <p class="price-period text-neutral-600 text-xs mb-7">soit ~96 DT / mois</p>
+        <ul class="price-features space-y-3 mb-8">
           <li class="flex items-center gap-2.5 text-sm text-neutral-300">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
           </li>
@@ -812,27 +826,27 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Bilan de progression
           </li>
         </ul>
-        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-outline w-full justify-center">Choisir ce plan</a>
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="price-cta btn-outline w-full justify-center">Choisir ce plan</a>
       </div>
 
       <!-- 1 an — HOT -->
-      <div class="card plan-hot p-8 aos relative" style="transition-delay:0.2s">
+      <div class="card plan-hot price-card p-8 aos relative" style="transition-delay:0.2s">
         <div class="plan-badge absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-[11px] font-black uppercase tracking-widest px-5 py-1.5 rounded-full whitespace-nowrap"
              style="background:linear-gradient(135deg,#FF8C2A,#F97316,#E06010)">
           🔥 Offre active
         </div>
-        <div class="text-[11px] font-bold uppercase tracking-widest text-or-500 mb-1">Abonnement</div>
-        <div class="hlg text-white mb-4" style="font-size:1.5rem">1 An</div>
+        <div class="price-tag text-[11px] font-bold uppercase tracking-widest text-or-500 mb-1">Abonnement</div>
+        <div class="price-plan-name hlg text-white mb-3" style="font-size:1.5rem">1 An</div>
         <div class="flex items-end gap-2 mb-1">
-          <span class="hlg text-white" style="font-size:3.5rem">720</span>
-          <span class="text-neutral-500 mb-2 font-bold text-lg">DT</span>
+          <span class="price-num hlg text-white" style="font-size:3.5rem">720</span>
+          <span class="price-dt text-neutral-500 mb-2 font-bold text-lg">DT</span>
         </div>
-        <div class="flex items-center flex-wrap gap-2 mb-7">
+        <div class="price-period flex items-center flex-wrap gap-2 mb-7">
           <span class="text-neutral-600 text-xs line-through">840 DT</span>
           <span class="text-[11px] font-black text-or-500 px-2 py-0.5 rounded-full" style="background:rgba(249,115,22,0.12)">–14%</span>
           <span class="text-neutral-600 text-xs">soit 60 DT / mois</span>
         </div>
-        <ul class="space-y-3 mb-8">
+        <ul class="price-features space-y-3 mb-8">
           <li class="flex items-center gap-2.5 text-sm text-neutral-300">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Accès illimité à la salle
           </li>
@@ -849,7 +863,7 @@
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#F97316" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Cours collectifs inclus
           </li>
         </ul>
-        <a href="https://tally.so/r/WOpBoj" target="_blank" class="btn-fire w-full justify-center">
+        <a href="https://tally.so/r/WOpBoj" target="_blank" class="price-cta btn-fire w-full justify-center">
           Profiter de l'offre
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
